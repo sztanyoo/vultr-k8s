@@ -33,3 +33,6 @@ kubectl --kubeconfig $DEFAULT_KUBECONFIG apply -f "https://cloud.weave.works/k8s
 echo "Enable scheduling to master"
 kubectl --kubeconfig $DEFAULT_KUBECONFIG taint node `hostname` node-role.kubernetes.io/master:NoSchedule-
 kubectl --kubeconfig $DEFAULT_KUBECONFIG taint node `hostname` node.kubernetes.io/not-ready:NoSchedule-
+
+wall "Bootstrap ready"
+
