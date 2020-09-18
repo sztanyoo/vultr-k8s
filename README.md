@@ -1,12 +1,14 @@
 # vultr-k8s
 
-With this startup script you'll have a single node kubernetes cluster.
+With these startup scripts you can have a single node kubernetes cluster on Vultr cloud (probably works on other infra as well).
 
 # Usage
 
+### Kubeadm installer
+
 1. Create a Vultr account (This link gives you $100 https://www.vultr.com/?ref=8668618-6G)
 2. Create an ssh key: https://my.vultr.com/settings/#settingssshkeys
-3. Create a Startup Script: https://my.vultr.com/startup/manage/?SCRIPTID=new and copy the contents of vultr-k8s-singlenode.sh to it
+3. Create a Startup Script: https://my.vultr.com/startup/manage/?SCRIPTID=new and copy the contents of vultr-k8s-singlenode.sh to it. This will install a single node k8s cluster using kubeadm.
 4. Deploy a new server with the following parameters:
   - **Type**: Cloud Compute (or High Frequency for a faster one)
   - **Location**: Something close to your location
@@ -63,6 +65,11 @@ Commercial support is available at
 </body>
 </html>
 ```
+### Microk8s installer
+
+This script is pretty similar to the previous one. It deploys Microk8s based on https://microk8s.io/docs, so k8s will be accessible with `microk8s kubectl ...` commands.
+
+Installation steps are the same as with kubeadm, but use `vultr-microk8s.sh` as a startup script.
 
 # Further reading
 https://k8s.io - Trust me, it's good stuff ;)
